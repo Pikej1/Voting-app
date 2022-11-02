@@ -1,0 +1,27 @@
+<h1>{{ 'VOTE.TITLE' | translate }}</h1>
+<form [formGroup]="votingForm" (ngSubmit)="onSubmit()" class="voting-form">
+  <mat-form-field>
+    <mat-label>{{'VOTE.VOTER_LABEL' | translate}}</mat-label>
+    <mat-select formControlName="voter">
+      <ng-container *ngIf="voters?.length; else noVoters">
+        <mat-option *ngFor="let voter of voters" [value]="voter.id">{{ voter.name }}</mat-option>
+      </ng-container>
+      <ng-template #noVoters>
+        <mat-option disabled>{{ 'VOTE.NO_VOTERS' | translate }}</mat-option>
+      </ng-template>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{'VOTE.CANDIDATE_LABEL' | translate}}</mat-label>
+    <mat-select formControlName="candidate">
+      <ng-container *ngIf="candidates?.length; else noCandidates">
+        <mat-option *ngFor="let candidate of candidates" [value]="candidate.id">{{ candidate.name }}</mat-option>
+      </ng-container>
+      <ng-template #noCandidates>
+        <mat-option disabled>{{ 'VOTE.NO_CANDIDATES' | translate }}</mat-option>
+      </ng-template>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="votingForm.invalid">{{ 'VOTE.SUBMIT' | translate }}</button>
+</form>

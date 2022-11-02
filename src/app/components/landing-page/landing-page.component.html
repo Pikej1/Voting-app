@@ -1,0 +1,7 @@
+<section class="main-container">
+  <app-voters-list [voters$]="voters$" (addParticipantEvent)="addVoter($event)"></app-voters-list>
+  <app-candidates-list [candidates$]="candidates$" (addParticipantEvent)="addCandidate($event)"></app-candidates-list>
+</section>
+<section class="vote-container">
+  <app-vote [voters$]="voters$" [candidates$]="candidates$"></app-vote>
+</section>

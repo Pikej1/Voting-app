@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{ 'ADD_PARTICIPANT_MODAL.TITLE' | translate }}</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput type="text" [formControl]="name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button color="primary" (click)="addParticipant()" [disabled]="name.invalid">Save</button>
+</div>

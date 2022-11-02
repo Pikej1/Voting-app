@@ -1,0 +1,17 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid black;
+
+  * {
+    flex: 1;
+  }
+}
+
+.vote-container {
+  margin-top: 20px;
+}

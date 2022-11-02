@@ -1,0 +1,24 @@
+<section class="table" class="mat-elevation-z8">
+  <table mat-table [dataSource]="voters$">
+    <caption class="header-row">
+      <h2>{{ 'VOTERS' | translate }}</h2>
+      <button mat-fab color="primary" (click)="addParticipant()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </caption>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="name-column">{{ 'NAME' | translate }}</th>
+      <td mat-cell *matCellDef="let voter">{{ voter?.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="voted">
+      <th mat-header-cell *matHeaderCellDef>{{ 'HAS_VOTED' | translate }}</th>
+      <td mat-cell mat-cell *matCellDef="let voter">
+        <mat-icon color="primary" class="voting-check-icon">{{ voter?.hasVoted ? 'check_circle' : 'cancel' }}</mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</section>
+

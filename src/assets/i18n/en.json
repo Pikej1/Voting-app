@@ -1,0 +1,19 @@
+{
+  "TITLE": "Voting App",
+  "VOTERS": "Voters",
+  "CANDIDATES": "Candidates",
+  "NAME": "Name",
+  "HAS_VOTED": "Has voted",
+  "VOTES": "Votes",
+  "ADD_PARTICIPANT_MODAL": {
+    "TITLE": "Add participant"
+  },
+  "VOTE": {
+    "TITLE": "Vote!",
+    "VOTER_LABEL": "I am",
+    "CANDIDATE_LABEL": "I vote for",
+    "SUBMIT": "Submit!",
+    "NO_VOTERS": "No voters",
+    "NO_CANDIDATES": "No candidates"
+  }
+}

@@ -1,0 +1,10 @@
+.voting-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  button {
+    margin: 10px 0;
+  }
+}
